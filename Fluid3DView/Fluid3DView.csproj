@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HelixToolkit" Version="2.27.0" />
+    <PackageReference Include="HelixToolkit.Wpf" Version="2.27.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ObjFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ObjFiles\200_200.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ObjFiles\400_400.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
