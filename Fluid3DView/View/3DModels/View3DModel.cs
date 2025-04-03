@@ -1,36 +1,29 @@
 ﻿using HelixToolkit.Wpf;
-using System.Windows;
 using System.Windows.Media.Media3D;
 
 namespace Fluid3DView.View._3DModels
 {
-    public class View3DModel : ScreenSpaceVisual3D
+    public class View3DModel : MeshNormalsVisual3D
     {
-        public static readonly DependencyProperty CenterProperty = DependencyProperty.Register(
-            "Center", typeof(Point3D), typeof(CubeVisual3D), new UIPropertyMetadata(new Point3D(), GeometryChanged));
-
-        public Point3D Center
+        public View3DModel()
         {
-            get
+            string path_ = @"E:\VisualStudio\repos\Fluid3DView\Fluid3DView\bin\Debug\net8.0-windows\ObjFiles\200_200.obj";
+            var modelImporter = new ModelImporter();
+            var model3DGroup = modelImporter.Load(path_) as Model3DGroup;
+            foreach (var item in model3DGroup.Children)
             {
-                return (Point3D)this.GetValue(CenterProperty);
+                if (item is GeometryModel3D geometryModel)
+                {
+
+
+                    this.Children.Add(new ModelVisual3D { Content = item });
+                }
             }
+            var rotation = new AxisAngleRotation3D(new Vector3D(0,1,1), 180);
+            var rotateTransform = new RotateTransform3D(rotation);
 
-            set
-            {
-                this.SetValue(CenterProperty, value);
-            }
-        }
+            this.Transform = rotateTransform;
 
-        protected override void UpdateGeometry()
-        {
-            
-            throw new NotImplementedException();
-        }
-
-        protected override bool UpdateTransforms()
-        {
-            throw new NotImplementedException();
         }
     }
 }

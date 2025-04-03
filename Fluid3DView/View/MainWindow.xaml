@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Fluid3DView"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         xmlns:helix="http://helix-toolkit.org/wpf" 
+        xmlns:ViewControl="clr-namespace:Fluid3DView.View._3DModels"
         Title="MainWindow" Height="800" Width="1200">
     <Grid>
         <helix:HelixViewport3D 
@@ -28,6 +29,8 @@
 
                 <helix:BoxVisual3D Center="0,0,30"/>
             </ModelVisual3D>
+            <ViewControl:View3DModel/>
+
         </helix:HelixViewport3D>
     </Grid>
 </Window>
