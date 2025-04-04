@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluid3DView", "Fluid3DView\Fluid3DView.csproj", "{DD7D471C-E21A-4E78-B58C-E516662B2D66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{50454109-E715-4BEC-A261-D73BC9FF1E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{DD7D471C-E21A-4E78-B58C-E516662B2D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD7D471C-E21A-4E78-B58C-E516662B2D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD7D471C-E21A-4E78-B58C-E516662B2D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50454109-E715-4BEC-A261-D73BC9FF1E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50454109-E715-4BEC-A261-D73BC9FF1E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50454109-E715-4BEC-A261-D73BC9FF1E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50454109-E715-4BEC-A261-D73BC9FF1E27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50454109-E715-4BEC-A261-D73BC9FF1E27} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5DCFCB5-E6B4-41EF-B29E-D9DEF80FCD34}

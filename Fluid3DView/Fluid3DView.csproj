@@ -11,10 +11,17 @@
   <ItemGroup>
     <PackageReference Include="HelixToolkit" Version="2.27.0" />
     <PackageReference Include="HelixToolkit.Wpf" Version="2.27.0" />
+    <PackageReference Include="System.IO.Ports" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ObjFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="3DPrintConnect.ComConnector">
+      <HintPath>..\Libs\3DPrintConnect.ComConnector.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

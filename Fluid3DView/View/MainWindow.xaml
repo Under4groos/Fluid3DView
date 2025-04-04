@@ -7,10 +7,13 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         xmlns:helix="http://helix-toolkit.org/wpf" 
         xmlns:ViewControl="clr-namespace:Fluid3DView.View._3DModels"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="MainWindow" Height="800" Width="1200" Loaded="MainWindow_Loaded" >
+    <Window.Resources>
+        <SolidColorBrush x:Key="soplo" Color="red" Opacity="1"/>
+    </Window.Resources>
     <Grid>
         <helix:HelixViewport3D 
-      
+            Background="#1e1e1e"
     
             x:Name="viewport" 
             
@@ -20,17 +23,43 @@
             <helix:DefaultLights />
 
 
-            <helix:GridLinesVisual3D 
-        Width="400" Thickness="0.1"  
-        Length="400" Center="0,0,00" Fill="#1e1e1e"/>
+            
 
             <ModelVisual3D x:Name="modelGroup" >
-                <helix:CubeVisual3D x:Name="fcube" Center="30,10,10" />
+                <helix:CubeVisual3D x:Name="printer"  SideLength="1"  Fill="{DynamicResource soplo}" Center="0,0,0" />
 
-                <helix:BoxVisual3D Center="0,0,30"/>
+                
             </ModelVisual3D>
-            <ViewControl:View3DModel/>
+            
+            
+            <ModelVisual3D>
+                <helix:BoxVisual3D x:Name="center" Center="0,0,1" Fill="Orange"/>
+                <helix:BoxVisual3D x:Name="startpoint" Center="1100,1100,0" Fill="Green"/>
+
+
+                <ModelVisual3D x:Name="labels">
+                    <helix:TextVisual3D Foreground="White" Background="Transparent" Position="120,120,0" Text="0,0" Height="10"/>
+                    <helix:TextVisual3D Foreground="White" Background="Transparent" Position="120,-120,0" Text="0,220" Height="10"/>
+                    <helix:TextVisual3D Foreground="White" Background="Transparent" Position="-120,-120,0" Text="220,220" Height="10"/>
+                    <helix:TextVisual3D Foreground="White" Background="Transparent" Position="-120,120,0" Text="220,0" Height="10"/>
+                </ModelVisual3D>
+               
+
+
+                <helix:GridLinesVisual3D 
+Width="220" Thickness="0.1" MinorDistance ="5"
+Length="220" Center="0,0,1" Fill="White"/>
+                <!--<ViewControl:View3DModel/>-->
+            </ModelVisual3D>
 
         </helix:HelixViewport3D>
+        <Border VerticalAlignment="Bottom" Background="#1e1e1e" BorderThickness="1" BorderBrush="#2d2d2d" CornerRadius="4" Margin="4" Padding="3">
+            <StackPanel  Orientation="Horizontal">
+                <Button Click="Button_Click" Margin="4,0,4,0" Content="Position"/>
+
+                <Button Click="Button_Click_1" Margin="4,0,4,0" Content="Random pos"/>
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

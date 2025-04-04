@@ -1,4 +1,5 @@
 ﻿using HelixToolkit.Wpf;
+using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
 namespace Fluid3DView.View._3DModels
@@ -7,6 +8,11 @@ namespace Fluid3DView.View._3DModels
     {
         public View3DModel()
         {
+
+           
+            var material = new DiffuseMaterial(new SolidColorBrush(Color.FromArgb(255, 30, 30, 33)));
+
+
             string path_ = @"E:\VisualStudio\repos\Fluid3DView\Fluid3DView\bin\Debug\net8.0-windows\ObjFiles\200_200.obj";
             var modelImporter = new ModelImporter();
             var model3DGroup = modelImporter.Load(path_) as Model3DGroup;
@@ -14,7 +20,7 @@ namespace Fluid3DView.View._3DModels
             {
                 if (item is GeometryModel3D geometryModel)
                 {
-
+                    geometryModel.Material = material;
 
                     this.Children.Add(new ModelVisual3D { Content = item });
                 }
